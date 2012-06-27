@@ -349,7 +349,7 @@ class ObjectiveFunction
         cv += val
       end
     end
-    cv = 0 if cv < 0.03 
+    #cv = 0 if cv < 0.03 
     cv
   end
 
