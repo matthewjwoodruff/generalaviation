@@ -80,8 +80,9 @@ while line:
 
         # compute each response
         for jj in range(nresp):
+            offset = nresp * int(seats[ii])/2
             outputs.append(sum(map(lambda xx, yy: xx * yy, design, 
-                                        matrix[nresp*ii+jj])))
+                                        matrix[offset+jj])))
 
     # write response to stdout
     print "\t".join([unicode(xx) for xx in outputs])
