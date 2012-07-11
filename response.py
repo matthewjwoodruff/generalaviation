@@ -34,6 +34,13 @@ def get_interactions(dvs):
     interactions = get_interactions(dvs[1:])
     return [dvs[0]*dv for dv in dvs[1:]] + interactions
 
+def scale_dvs(dvs):
+    translate = [0.36, 9, 3, 5.734, 22, 97.5, 17, 3.375, 0.73]
+    scale = [0.12, 2, 3, 0.234, 3, 12.5, 3, 0.375, 0.27]
+    translate_and_scale = lambda xx, yy, zz: (xx-yy)/zz
+    return map(translate_and_scale, dvs, translate, scale)
+    
+
 def design_vector(dvs):
     return [1] + dvs + get_interactions(dvs) + \
            [dv**2 for dv in dvs]
@@ -80,7 +87,7 @@ while line:
         # compute design vector from decision variables
         dvs = variables[0:ndvs]
         variables[0:ndvs] = []
-        design = design_vector(dvs)
+        design = design_vector(scale_dvs(dvs))
 
         # compute each response
         for jj in range(nresp):
