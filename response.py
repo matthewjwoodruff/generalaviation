@@ -57,8 +57,10 @@ if len(seats) == 0:
 matrix = read_matrix("coefficient_matrix.txt")
 
 ndvs = 9 # 9 decision variables per aircraft
-nresp = 9 # 9 responses per aircraft
 totalndvs = ndvs * len(seats)
+
+nresp = 9 # 9 responses per aircraft
+respoffset = {"2":nresp*0,"4":nresp*1,"6":nresp*2}
 
 # main loop
 line = sys.stdin.readline()
@@ -74,15 +76,18 @@ while line:
 
     outputs = []
     # for each number of seats
-    for ii in range(len(seats)):
+    for seat in seats:
         # compute design vector from decision variables
-        design = design_vector(variables[ndvs*ii:ndvs*ii+ndvs])
+        dvs = variables[0:ndvs]
+        variables[0:ndvs] = []
+        design = design_vector(dvs)
 
         # compute each response
         for jj in range(nresp):
-            offset = nresp * int(seats[ii])/2
-            outputs.append(sum(map(lambda xx, yy: xx * yy, design, 
-                                        matrix[offset+jj])))
+            offset = jj + respoffset[seat]
+            response = sum(map(lambda xx, yy: xx * yy, design, 
+                                          matrix[offset]))
+            outputs.append(response)
 
     # write response to stdout
     print "\t".join([unicode(xx) for xx in outputs])
