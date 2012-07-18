@@ -34,7 +34,7 @@ class ObjectiveCalculator
       counter = 0
       while(line = fp.gets)
         nils = 0
-        row = line.chomp.split("\t").collect do |element|
+        row = line.chomp.split(/[ ,\t]/).collect do |element|
           if(rex =~ element) 
             element = element.to_f
           else 
