@@ -15,11 +15,15 @@ constraints = [75, 2200, 80, 2, 450,  None, -2000, None, None ,
                75, 2200, 80, 2, 500,  None, -2000, None, None ]
 def constr_violation(row):
     global constraints
+    global minimize
     cv = 0
-    for perf, constr in zip(row, constraints):
-        if constr:
+    for perf, constr, mini in zip(row, constraints, minimize*3):
+        if not constr: continue
+        if mini > 0:
             violation = max((perf - constr) / constr, 0)
-            cv += violation
+        else:
+            violation = max((constr - perf) / constr, 0)
+        cv += violation
     return cv
 
 global goals
