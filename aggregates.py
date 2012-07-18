@@ -17,7 +17,7 @@ def constr_violation(row):
     global constraints
     cv = 0
     for perf, constr in zip(row, constraints):
-        if constr: 
+        if constr:
             violation = max((perf - constr) / constr, 0)
             cv += violation
     return cv
