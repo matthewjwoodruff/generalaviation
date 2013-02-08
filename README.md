@@ -11,6 +11,7 @@ C version is under the MIT license.
 Ruby and Python versions are under LGPL v3 or later
 
 Citations:
+
  T. W. Simpson, W. Chen, J. K. Allen, and F. Mistree (1996),
  "Conceptual design of a family of products through the use of
  the robust concept exploration method," in 6th AIAA/USAF/NASA/
@@ -30,4 +31,4 @@ Citations:
  M. Woodruff, T. W. Simpson, P. M. Reed (2013), "Diagnostic
  Analysis of Metamodels' Multivariate Dependencies and their 
  Impacts in Many-Objective Design Optimization," Proceedings
- of the ASME 2013 IDETC/CIE Conference, Paper No. DETC2013-13125
+ of the ASME 2013 IDETC/CIE Conference, Paper No. DETC2013-13125.
