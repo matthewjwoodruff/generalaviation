@@ -1,14 +1,8 @@
-#include <ensga2.h>
+#include <math.h>
 
-#ifdef GAA
-
-extern Acb  *acb;
-
-void calc_GAA(Individual *ind)
+void calc_GAA(double* dvs, double* obj, double* constr)
 {
-	double *xreal   = ind->xreal;
-	double *obj     = ind->obj;
-    double *constr  = ind->constr;
+	double 		*xreal   = dvs;
 	double		CSPD2, AR2, SWEEP2, DPROP2, WINGLD2, AF2, SEATW2, ELODT2, TAPER2;
 	double		CSPD4, AR4, SWEEP4, DPROP4, WINGLD4, AF4, SEATW4, ELODT4, TAPER4;
 	double		CSPD6, AR6, SWEEP6, DPROP6, WINGLD6, AF6, SEATW6, ELODT6, TAPER6;
@@ -297,4 +291,3 @@ max_PURCH=0, min_RANGE=200000, min_LDMAX=200000, min_VCMAX=200000;
 
 }
 
-#endif
