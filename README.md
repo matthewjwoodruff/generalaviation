@@ -8,4 +8,4 @@ It includes both a model evaluation and several objective function calculations.
 
 License: 
 C version is under the MIT license.
-Ruby and Python versions under GPL v3 or later
+Ruby and Python versions under LGPL v3 or later
