@@ -43,6 +43,7 @@
  *       evolutionary optimization and visual analytics for product
  *       family design," Multiobjective Evolutionary Optimisation for
  *       Product Design and Manufacturing, Springer, London, pp. 137-159.
+ *
  */
 #ifndef _GAA_H_
 #define _GAA_H_
