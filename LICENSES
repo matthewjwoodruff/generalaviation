@@ -1,0 +1,5 @@
+The two implementations (C, Python) of the GAA problem are under different 
+licenses.  The C version is under the MIT license, and the Python version
+is under LGPL version 3.  See the LICENSE file with each implementation
+for license terms.
+
